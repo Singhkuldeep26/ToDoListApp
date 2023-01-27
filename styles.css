@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url("");
+}
+
+body{
+    background-image: linear-gradient(90deg, #b756cf, #c20050 );
+    color: white;
+    min-height: 100vh;
+}
+
+header{
+    font-size: 1.5rem;
+    text-decoration: underline;
+}
+
+header, form{
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+/*----------------------------------- started with form styling---------------------------- */
+form input, form button{
+    padding: 0.5rem;
+    font-size: 2rem;
+    outline: none;
+    border-style: none;
+    background: white;
+}
+ 
+form button{
+    color: #1806e0;
+    background: white;
+    cursor: pointer;
+    transition: all 0.2 ease-in-out;
+}
+
+form button:hover{
+    background-image: linear-gradient(60deg, #7a73db, #281aed );
+    color: rgb(255, 255, 255);
+}
+/*----------------------------- styling to todo list created by javascript ---------------------- */
+.todo-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.todo-list{
+    min-width: 30%;
+    list-style: none;
+}
+/* todo class is taken form javascript which we already added in our js classList */
+.todo{
+    margin: 0.5rem;
+    background: white;
+    color: black;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.5s ease;
+}
+/* flexing element to the end  */
+.todo li{
+    flex: 1;
+}
+
+/* styling buttons created in javascript */
+.check-btn, .delete-btn{
+    background:  rgb(43, 177, 43);;
+    color: white;
+    padding: 1rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.delete-btn{
+    background: red;
+}
+/* stopped pointer event, as pointer event wasn't penetrating trough the fa icon */
+.fa-trash, .fa-check{
+    pointer-events: none;
+}
+/* Adding padding to input text */
+.todo-item{
+    padding: 0rem 0.5rem;
+}
+/* after check operation in app.js we added the check class into class list */
+.check{
+    text-decoration: line-through; /*this will draw a line on a item after only when we click on a check button*/  
+    opacity: 0.6;
+}
+
+/* adding Animation effect after clicking an delete button  */
+.fall-down{
+    /*   transform: translateX(8rem); falling effect to X direction, fading out to X direction*/
+    /* transform: translateY(8rem); falling effect to Y direction, fading out to Y direction,  */
+    /* 8rem define how much away it should Go from the actual position  */
+    transform: translate3d(8rem);
+    opacity: 0;
+}
+
+/*------------------------------- Adding some styling to select options ---------------------------- */
+
+select{
+    /* Removing the all styling of the select option  */
+    -webkit-appearance: none; /*this will remove all the appearance of the given select option ex: style,border,arrows etc*/
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border: none;
+}
+
+select{
+    color: black;
+    width: 10rem;
+    cursor: pointer;
+    padding: 1rem;
+    font-weight: bold;
+}
+
+/* styling to select button  */
+.select{
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+.select::after{
+    content: "\25BC";
+    position: absolute;
+    background:#010101;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    pointer-events: none; /* to click throw the button we use this property */
+    transition: all .3s ease-in-out;
+}
+.select:hover::after{
+    background: blue;
+    color:whitesmoke;
+}
